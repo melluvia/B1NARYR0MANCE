@@ -1,0 +1,156 @@
+body {
+  background: url(http://res.cloudinary.com/melluvia/image/upload/v1459880606/C7MJR7LV7V_skdmsd.jpg)
+   no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: black;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #e91e63;
+  text-decoration: none;
+}
+a:active {
+  color: purple;
+}
+a:visited {
+  text-decoration: none;
+
+}
+p {
+  color: white;
+  font-family: "Inconsolata";
+  font-size: 1.2em;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.social-media-links {
+  padding: 2em;
+  display: inline-block;
+  
+}
+
+.home {
+  padding: 2em;
+}
+.icon-2x {
+  padding: .25em;
+}
+
+.title {
+  font-family: 'Inconsolata';
+  color: white;
+  font-size: 6em;
+  text-align: center;
+  width: 50%; 
+  height: 50%;
+  min-width: 125px;
+  max-width: 600px;
+  padding: 20px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.intro {
+  text-align: center;
+  width: 50%; 
+  height: 25%;
+  min-width: 350px;
+  max-width: 600px;
+  padding: 30px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+  
+//gradient shadow effect
+
+//function + mixin
+@function shadow-string($color1, $color2, $length){
+  $total-length: $length;
+  $string: $color1 0px 0px;
+  @while $length > 0 {
+    $mix-amount: 100 - (($length / $total-length) * 100);
+    $mixed-color: mix($color1,$color2, $mix-amount);
+    $string-addition: $length+px $length+px;
+    $string: $mixed-color $string-addition, $string;
+    $length: $length - 1;  
+  }
+  @return $string
+}
+
+@mixin longshadow($color1, $color2, $length) {  
+  text-shadow: shadow-string($color1, $color2, $length);    
+}
+
+//color vars
+$color-bg:#FFEA80;
+$color-title:#FFFFD9;
+$color-line-1:#FF6138;
+$color-line-2:#FFB400;
+$color-line-3:#00A388;
+$color-line-4:#005AB3;
+$color-line-5:#8100FF;
+
+//styling
+/*body{
+  padding:2rem;
+  text-align:center;
+  letter-spacing:.08em;
+  line-height:1.4;
+ 
+}*/
+
+.bandname{
+  font-size:9vw;
+  padding: 1em;
+}
+  .title-part{
+    font-weight: 600;
+    font-family:'Inconsolata', sans-serif;
+    text-transform: Uppercase;
+    display:block;
+    text-align: center;
+    letter-spacing: .06em;
+    color:$color-title;
+}
+    
+    /*&.line-1{
+      @include longshadow($color-line-1, $color-bg, 120);
+    }
+    &.line-2{
+      @include longshadow($color-line-2, $color-bg, 60);
+    }
+    &.line-3{
+      @include longshadow($color-line-3, $color-bg, 100);
+    }  
+    &.line-4{
+      @include longshadow($color-line-4, $color-bg, 100);
+    }  */
+.line-5 {
+      @include longshadow($color-line-5, $color-bg, 100);
+    } 
+  
+#portrait {
+    height: 1em;
+    width: 1em;
+    position: absolute;
+}
+  
+#music-player {
+  position: relative;
+  height: 10%;
+  width: 100%;
+  padding: 7em 5em;
+}
+ 
